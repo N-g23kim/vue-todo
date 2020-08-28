@@ -1,0 +1,38 @@
+{
+  "name": "vue-todo",
+  "version": "1.0.0",
+  "description": "vue-todo-study",
+  "main": ".babelrc.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "webpack --env.NODE_ENV=production --watch",
+    "dev": "webpack-dev-server --env.NODE_ENV=development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.11.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.0.3",
+    "vue-router": "^3.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.2",
+    "rimraf": "^3.0.2",
+    "style-loader": "^1.2.1",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "sass-loader": "^10.0.1"
+  }
+}

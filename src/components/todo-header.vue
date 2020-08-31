@@ -2,13 +2,33 @@
     <header>
         <div class="inner-wrap">
             <h1>TO DO LIST!</h1>
+            <p class="date">{{ timestamp }}</p>
         </div>
     </header>
 </template>
 
 <script>
 export default {
-    
+    name: "todo-header",
+
+    data() {
+        return {
+            timestamp:""
+        }
+    },
+
+    created() {
+        const now = new Date();
+        
+        const month = now.getMonth() + 1;
+        
+        const weekList = new Array("Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.");
+        const week = weekList[now.getDay()];
+
+        const date  = now.getDate();
+
+        this.timestamp = `${month}/${date} (${week})`;
+    }
 }
 </script>
 

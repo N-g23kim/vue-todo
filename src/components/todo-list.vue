@@ -3,9 +3,14 @@
     <section class="todo_list-wrap">
         <h2>List Area</h2>
 
-        <div class="todo_list-item">
+        <div class="item-wrapper">
             <ul>
-                <TodoItem v-for="(item, index) in todoItems" :key="index" :itemdata="item"></TodoItem>
+                <!-- v-bind: 데이터를 동적으로 바인딩해 자식(하위 컴포넌트에 전달) -->
+                <!-- v-bind:key = :key (:단축 구문으로 사용) -->
+                <li v-for="(item, index) in todos" :key="index">
+                    <!-- <TodoItem :item="item" :index="index" v-on:removeTodo="removeTodo"></TodoItem> -->
+                    <TodoItem :item="item" :index="index"></TodoItem><!-- eventBus로 변경 -->
+                </li>
             </ul>
         </div>
     </section>
@@ -15,25 +20,24 @@
 import TodoItem from './todo-list_item';
 
 export default {
+    name: "todo-list",
+
     components: {
         TodoItem
     },
 
-    data() {
-        return {
-            todoItems: []
+    props: {
+        todos: {
+            type: Array,
+            default: function() {return {};}
         }
     },
 
-    // created() : 라이프사이클 단계 중 data속성과 methods속성이 정의된 후 실행되는 단계
-    created() {
-        // localStorage에 저장되어있는 목록을 vue 데이터 todoItems에 저장
-        if(localStorage.length > 0) {
-            Object.keys(localStorage).forEach( (key, value) => {
-                // console.log(localStorage.getItem(key));
-                this.todoItems.push(localStorage.getItem(key));
-            });
-        }
-    }
+    // emit을 또 하기 보다는 EventBus를 사용
+    // methods: {
+    //     removeTodo(item, index) {
+    //         this.$emit("removeTodo", item, index);
+    //     }
+    // }
 }
 </script>

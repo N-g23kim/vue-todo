@@ -68,7 +68,7 @@ module.exports = {
 
       // CSS file을 dist 폴더로 추출
       new MiniCssExtractPlugin({
-        filename: 'css/[name].css',
+        filename: 'css/[name].[hash].css',
       }),
 
       // build 할 경우 삭제할 폴더 지정

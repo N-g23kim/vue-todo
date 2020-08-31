@@ -3,6 +3,9 @@
   <div id="app">
     <Header></Header>
     <div class="wrapper">
+      <!-- URL값에 따라 갱신되는 화면 영역 -->
+      <router-view/>
+      <TitleBox></TitleBox>
       <InputBox v-on:addTodo="addTodo"></InputBox>
       <!-- <TodoList :todos="todos" v-on:removeTodo="removeTodo"></TodoList> -->
       <TodoList :todos="todos"></TodoList><!-- eventBus로 변경 -->
@@ -13,16 +16,18 @@
 
 <script>
 import Header from './components/todo-header';
+import TitleBox from './components/todo-title';
 import InputBox from './components/todo-input';
 import TodoList from './components/todo-list';
 import Footer from './components/todo-footer';
 import { EventBus } from './bus';
 
 export default {
-  name: "App",
+  name: "home",
 
   components: {
     Header,
+    TitleBox,
     InputBox,
     TodoList,
     Footer

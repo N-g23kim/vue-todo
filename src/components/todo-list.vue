@@ -41,3 +41,32 @@ export default {
     // }
 }
 </script>
+
+<style scoped lang="scss">
+
+.todo_list-wrap {
+    h2 {
+        color:blueviolet;
+        font-size:22px;
+        font-weight:600;
+    }
+    .todo_list-item {
+        ul {
+            li {
+                &:after {
+                    content:"";
+                    display:block;
+                    clear:both;
+                }
+                p {
+                    float:left;
+                }
+                button {
+                    float:left;
+                }
+            }
+        }
+    }
+}
+
+</style>

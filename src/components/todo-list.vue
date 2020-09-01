@@ -9,7 +9,7 @@
                 <!-- v-bind:key = :key (:단축 구문으로 사용) -->
                 <li v-for="(item, index) in todos" :key="index">
                     <!-- <TodoItem :item="item" :index="index" v-on:removeTodo="removeTodo"></TodoItem> -->
-                    <TodoItem :item="item" :index="index"></TodoItem><!-- eventBus로 변경 -->
+                    <TodoItem :item="item" :index="index" @checkTodo="checkTodo"></TodoItem><!-- eventBus로 변경 -->
                 </li>
             </ul>
         </div>
@@ -33,12 +33,12 @@ export default {
         }
     },
 
-    // emit을 또 하기 보다는 EventBus를 사용
-    // methods: {
-    //     removeTodo(item, index) {
-    //         this.$emit("removeTodo", item, index);
-    //     }
-    // }
+    methods: {
+        checkTodo(checked) {
+            console.log("부모에서 값 받기 : " + checked);
+            return checked;
+        }
+    }
 }
 </script>
 

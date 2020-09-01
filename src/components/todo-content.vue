@@ -26,7 +26,7 @@ export default {
     // todos 빈 배열 선언
     data() {
         return {
-        todos: []
+            todos: []
         }
     },
 
@@ -70,6 +70,6 @@ export default {
             localStorage.removeItem(todo);
             this.todos.splice(index,1);
         })
-    }
+    },
 }
 </script>

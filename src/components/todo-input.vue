@@ -29,7 +29,7 @@ export default {
             if (this.newTodoItem == "") return;
             
             //inputbox에 입력된 텍스트의 앞, 뒤 공백문자열 제거
-            var txtValue = this.newTodoItem && this.newTodoItem.trim();
+            let txtValue = this.newTodoItem && this.newTodoItem.trim();
 
             // App 컴포넌트로 이벤트 전달
             this.$emit('addTodo', txtValue);
